@@ -1,7 +1,6 @@
 package Ej12;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Tarea {
     private String prioridad;
