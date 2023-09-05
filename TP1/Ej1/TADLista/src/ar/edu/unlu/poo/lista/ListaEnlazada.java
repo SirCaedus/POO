@@ -9,7 +9,7 @@ public class ListaEnlazada {
         largoLista = 0;
     }
 
-    public boolean listaEstaVacia(){
+    public boolean isVacia(){
         return  primero == null;
     }
 
@@ -25,14 +25,16 @@ public class ListaEnlazada {
             Nodo nodoAux = recuperarNodo(largoLista);
             nodoAux.setProximo(nuevoNodo);
         }
+
+        largoLista++;
     }
 
     public void eliminarDeLista(int index){
-        if (index < 0 || index >= largoLista){
+        if (index < 1 || index >= largoLista){
             throw new IndexOutOfBoundsException("El valor del indice esta fuera de rango");
         }
 
-        if (index == 0){
+        if (index == 1){
             primero = primero.getProximo();
         } else {
             Nodo nodoAnterior = recuperarNodo(index - 1);
@@ -44,7 +46,7 @@ public class ListaEnlazada {
     }
 
     public Object recuperarDeLista(int index){
-        if (index < 0 || index >= largoLista){
+        if (index < 1 || index > largoLista){
             throw new IndexOutOfBoundsException("El valor del indice esta fuera de rango");
         }
 
@@ -53,14 +55,14 @@ public class ListaEnlazada {
     }
 
     public void insertarEnLista(int index, Object dato){
-        if (index < 0 || index > largoLista){
+        if (index < 1 || index > largoLista + 1){
             throw new IndexOutOfBoundsException("El valor del indice esta fuera de rango");
         }
 
         Nodo nuevoNodo = new Nodo();
         nuevoNodo.setDato(dato);
 
-        if (index == 0){
+        if (index == 1){
             nuevoNodo.setProximo(primero);
             primero = nuevoNodo;
         } else {
@@ -74,7 +76,7 @@ public class ListaEnlazada {
 
     private Nodo recuperarNodo(int index){
         Nodo nodoAux = primero;
-        for(int i = 0; i < index; i++){
+        for(int i = 1; i < index; i++){
             nodoAux = nodoAux.getProximo();
         }
         return nodoAux;
