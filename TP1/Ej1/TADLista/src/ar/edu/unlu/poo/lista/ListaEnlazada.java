@@ -30,7 +30,7 @@ public class ListaEnlazada {
     }
 
     public void eliminarDeLista(int index){
-        if (index < 1 || index >= largoLista){
+        if (index < 1 || index > largoLista){
             throw new IndexOutOfBoundsException("El valor del indice esta fuera de rango");
         }
 
