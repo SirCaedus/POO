@@ -3,6 +3,7 @@ package ej6;
 public class Libro {
 
     // atributos
+   private String ISBN;
    private String titulo;
    private String autor;
    private int num_paginas;
@@ -51,4 +52,7 @@ public class Libro {
     public void prestado(){
         num_ejemplares_prestados++;
     }
+
+    public void devuelto(){
+        num_ejemplares_prestados--;
 }
