@@ -9,7 +9,7 @@ public class Pila {
     public void apilar(Object dato){
         Nodo nodoAux = new Nodo();
         nodoAux.setValor(dato);
-        if (!esVacia()) {
+        if (!isVacia()) {
             nodoAux.setSiguiente(tope);
         }
         tope = nodoAux;
@@ -17,7 +17,7 @@ public class Pila {
 
     public Object desapilar(){
         Nodo nodoAux;
-        if(esVacia()){
+        if(isVacia()){
             return null;
         }
 
@@ -30,18 +30,18 @@ public class Pila {
         return tope.getValor();
     }
 
-    public boolean esVacia(){
+    public boolean isVacia(){
         return tope == null;
     }
 
     public void mostrarPila(){
-        if (this.esVacia()){
+        if (this.isVacia()){
             System.out.println("pila vacia");
         } else {
             Pila pilaAux = new Pila();
             String acumulador = "";
             int i = 1;
-            while (!this.esVacia()){
+            while (!this.isVacia()){
                 acumulador += "Nodo " + i + " " + this.recuperar() + "\n";
                 i++;
 
