@@ -5,7 +5,7 @@ public class Main {
 
         Pila pila = new Pila();
 
-        if(pila.esVacia()){
+        if(pila.isVacia()){
             System.out.println("pila vacia");
         }
 
@@ -14,7 +14,7 @@ public class Main {
         pila.apilar("6");
         pila.apilar("1");
 
-        if(!pila.esVacia()){
+        if(!pila.isVacia()){
             System.out.println("pila tener cosas. tope ser " + pila.recuperar());
         } else {
             System.out.println("error al apilar");
